@@ -2,11 +2,11 @@ provider "aws" {
   region = var.region 
 }
 
-resource "aws_instance" "amazonlinuxmachine" {
+resource "aws_instance" "motogp" {
   ami           = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
-  security_groups = var.security_groups
+  security_groups = "sg-0e06c8b93a138f232"
   count = "5"
 
  tags = {
@@ -36,9 +36,6 @@ variable "instance_type" {
  variable "key_name" {
     default = "id_rsa"
     description = "for try"
- }
- variable "security_groups" {
-    default = "sg-0e06c8b93a138f232"
  }
  variable "tags" {
     default = "motogp"
