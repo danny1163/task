@@ -6,12 +6,12 @@ resource "aws_instance" "motogp" {
   ami           = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
-  vpc_security_group_ids = "vpc-0aff7001e9cd80f7c"
   count = "5"
 
  tags = {
     Name = var.tags
   }
+  vpc_security_group_ids = "vpc-0aff7001e9cd80f7c"
  }
 terraform {
   backend "s3" {
