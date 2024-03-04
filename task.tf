@@ -7,7 +7,7 @@ resource "aws_instance" "amazonlinuxmachine" {
   instance_type = var.instance_type
   key_name = var.key_name
   security_groups = var.security_groups
-  count = var.count
+  count = "5"
 
  tags = {
     Name = var.tags
@@ -39,9 +39,6 @@ variable "instance_type" {
  }
  variable "security_groups" {
     default = "sg-0e06c8b93a138f232"
- }
- variable "count" {
-    default = "5"
  }
  variable "tags" {
     default = "motogp"
