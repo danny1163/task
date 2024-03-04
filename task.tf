@@ -13,18 +13,12 @@ resource "aws_instance" "amazonlinuxmachine" {
     Name = var.tags
   }
  }
-resource "aws_s3_bucket" "dnyana" {
-  bucket = "dnyana"
-  tags = {
-    Name = "motogp"
-  }
-}
 terraform {
   backend "s3" {
-    bucket = "mybucket"
-    key    = "path/to/my/key"
-    region = "us-east-1"
-  }
+    bucket                  = "dnyana"
+    key                     = "motogp-project"
+    region                  = "ap-south-1"
+ }
 }
 
 variable "region" {
