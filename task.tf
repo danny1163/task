@@ -6,7 +6,7 @@ resource "aws_instance" "motogp" {
   ami           = var.ami
   instance_type = var.instance_type
   key_name = var.key_name
-  security_groups = "sg-0e06c8b93a138f232"
+  security_groups = "launch-wizard-1"
   count = "5"
 
  tags = {
