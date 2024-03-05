@@ -1,5 +1,6 @@
 - name: Installation of my web-server
   hosts: [node1]
+  become: true
   tasks:
     - name: install web package
       package:
